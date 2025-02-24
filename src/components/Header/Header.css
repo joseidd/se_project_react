@@ -1,6 +1,11 @@
 .header{
     display: flex;
     align-items: center;
+font-family: Cabinet Grotesk;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0%;
 
 
 }
