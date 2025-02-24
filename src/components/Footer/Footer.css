@@ -1,0 +1,22 @@
+
+
+
+.footer__text{
+color:rgba(0, 0, 0, 1) ;
+/* text-transform: uppercase;  */
+margin-top: 265px;
+display: flex;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 10px;
+margin-bottom: 0;
+position: relative;
+bottom: 20px;
+font-family: Cabinet Grotesk, Arial, Helvetica, sans-serif;
+font-weight: 500;
+font-size: 16px;
+letter-spacing: 0%;
+
+
+
+}

@@ -1,0 +1,167 @@
+.modal{
+position: fixed;
+top:0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #0000004d;
+display: flex;
+justify-content: center;
+align-items: center;
+visibility: hidden;
+
+
+}
+
+.modal_opened{
+visibility: visible;
+    
+}
+
+.modal__content{
+width: 496px;
+height: 436px;
+top: 193px;
+left: 472px;
+ padding: 30px 30px 30px;
+    position: absolute; 
+    background-color: white;
+    border-radius:16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal__title{
+margin: 0;
+font-family: Cabinet Grotesk;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+padding-bottom: 20px;
+}
+
+.modal__image{
+width: 100%;   
+height: auto;
+border-radius: 10px;
+}
+
+.modal__content_type_image{
+    width: 498px;
+    height: 610px;
+    top: 106px;
+    left: 471px;
+    position: absolute;
+    background-color: white;
+    border-radius:16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    padding: 0%;
+   border-radius: 16px;
+   }
+
+.modal__label{
+padding-bottom: 40px;
+}
+
+.modal__label_type_radio{
+padding: 0%;
+    
+}
+
+.modal__close{
+top: 20px;
+right: 28px; 
+position: absolute;
+ border: none;
+background: none;
+cursor: pointer;
+    
+
+}
+
+.modal__close-btn{
+position: relative;
+cursor: pointer;
+}
+
+
+
+
+
+.modal__caption{
+    width: 36px;
+    height: 24px;
+    top: 624px;
+    left: 503px;
+    padding-left: 30px;
+}
+
+.modal__weather{
+    padding-left: 30px;
+}
+
+.modal__form{
+display: flex;
+flex-direction: column;
+}
+
+
+
+.modal__input{
+display: block;
+ border: none;
+width: 100%;
+ padding: 8px;
+ margin-top: 5px;
+ /* border-bottom: 1px solid #ccc; */
+ width: 496;
+height: 436;
+top: 193px;
+left: 472px;
+border-bottom: 1px solid rgba(0, 0, 0, 1);
+box-sizing: border-box;
+}
+
+
+
+.modal__legend{
+padding-bottom: 8px;
+}
+
+.modal__radio-input{
+cursor: pointer;
+}
+
+.modal__radio-buttons{
+border: none;
+ padding: 0%;
+display: flex;
+flex-direction: column;
+padding-bottom: 50px;
+gap:10px;
+   
+}
+
+.modal__submit{
+
+width: 124px;
+height: 36px;
+border-radius: 4px;
+padding: 0;
+top: 8px;
+right: 16px;
+bottom: 8px;
+left: 16px;
+gap: 8px;
+border: none;
+background-color:rgba(0, 0, 0, 1);
+cursor: pointer;
+color: #fff;
+}
+
+.modal__submit:hover{
+background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
