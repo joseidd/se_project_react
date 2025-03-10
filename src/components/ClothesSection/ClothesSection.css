@@ -1,0 +1,26 @@
+.clothes-section__header {
+  display: flex;
+  gap: 20px;
+  padding-left: 250px;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.clothes-section__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 21px;
+  padding-left: 250px;
+}
+
+.clothes-section__button {
+  border: none;
+  background: none;
+  color: rgba(0, 0, 0, 0.6);
+}

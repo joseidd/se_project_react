@@ -1,0 +1,14 @@
+.sidebar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.sidebar__username {
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
