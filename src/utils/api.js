@@ -9,9 +9,7 @@ export function checkResponse(res) {
 }
 
 function getItems() {
-  return fetch(`${baseUrl}/items`).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 const addItems = ({ name, weather, imageUrl }) => {
@@ -31,4 +29,4 @@ function deleteItem(id) {
   }).then(checkResponse);
 }
 
-export const api = { getItems, addItems, deleteItem };
+export const api = { getItems, addItems, deleteItem, checkResponse };

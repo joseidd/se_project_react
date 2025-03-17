@@ -46,23 +46,26 @@ function App() {
     setActiveModal("");
   };
 
-  const handleDeleteItem = (id) => {
-    setActiveModal("delete");
-  };
+  // const handleDeleteItem = (id) => {
+  //   setActiveModal("delete");
+  // };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    api.addItems({ name, weather, imageUrl }).then((newItem) => {
-      setClothingItems([newItem, ...clothingItems]);
-      closeActiveModal();
-    });
+    api
+      .addItems({ name, weather, imageUrl })
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
 
   const handleCardDelete = () => {
     api
-      .deleteItem(selectedCard.id)
+      .deleteItem(selectedCard._id)
       .then(() => {
         setClothingItems(
-          clothingItems.filter((item) => item.id !== selectedCard.id)
+          clothingItems.filter((item) => item._id !== selectedCard._id)
         );
         closeActiveModal();
       })

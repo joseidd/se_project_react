@@ -1,6 +1,6 @@
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AddItemModal({
   onClose,
@@ -22,6 +22,12 @@ export default function AddItemModal({
   const handleWeatherChange = (e) => {
     setWeather(e.target.value);
   };
+
+  useEffect(() => {
+    setName("");
+    setImageUrl("");
+    setWeather("");
+  }, [isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
