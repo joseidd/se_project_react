@@ -147,3 +147,21 @@
 .modal__submit:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+.modal__close-delete {
+  position: absolute;
+  width: 101px;
+  height: 24px;
+  top: 520px;
+  left: 378px;
+  border: none;
+  background: none;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  /* font-size: 20px; */
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: rgba(255, 77, 0, 1);
+  text-align: initial;
+  cursor: pointer;
+}
