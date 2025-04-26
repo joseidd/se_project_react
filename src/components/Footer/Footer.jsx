@@ -1,11 +1,10 @@
-import "./footer.css";
+import "./Footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__text">
-        Developed by Jose Duran <span></span>2024
-      </p>
+      <div>Developed by Jose Duran</div>
+      <div>2024</div>
     </footer>
   );
 }

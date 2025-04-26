@@ -1,5 +1,5 @@
 import "./ModalWithForm.css";
-import closeicongray from "../../assets/closeicongray.png";
+import closeButton from "../../assets/closeFormModal.png";
 
 function ModalWithForm({
   children,
@@ -10,18 +10,17 @@ function ModalWithForm({
   onSubmit,
 }) {
   return (
-    <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
+    <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
-          <img src={closeicongray} />
+          <img src={closeButton} alt="closeButton" />
         </button>
-
-        <form onSubmit={onSubmit} className="modal__form">
+        <form className="modal__form" onSubmit={onSubmit}>
           {children}
-          <button type="submit" className="modal__submit">
+          {/* <button type="submit" className="modal__submit">
             {buttonText}
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

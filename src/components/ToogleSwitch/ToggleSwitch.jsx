@@ -1,32 +1,51 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import "./ToggleSwitch.css";
-import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
-export default function ToggleSwitch() {
-  const { handleToggleSwitchChange, currentTemperatureUnit } = useContext(
+const ToggleSwitch = () => {
+  //   const [currentTemperatureUnit, handleToggleSwitchChange] = useState("C");
+
+  //   const handleChange = (e) => {
+  //     if (currentTemperatureUnit === "C") handleToggleSwitchChange("F");
+  //     if (currentTemperatureUnit === "F") handleToggleSwitchChange("C");
+  //   };
+
+  //   console.log(currentTemperatureUnit);
+  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
     CurrentTemperatureUnitContext
   );
+  console.log(currentTemperatureUnit);
 
   return (
-    <label className="toggle-switch">
+    <label className="switch">
       <input
-        onChange={handleToggleSwitchChange}
         type="checkbox"
-        className="toggle-switch__checkbox"
+        className="switch__box"
+        onChange={handleToggleSwitchChange}
       />
-      <span className="toggle-switch__circle"></span>
       <span
-        style={{ color: `${currentTemperatureUnit === "F" ? "white" : ""}` }}
-        className="toggle-switch__text toggle-switch__text_F"
+        className={
+          currentTemperatureUnit === "F"
+            ? "switch__slider swicth__slider-F"
+            : "switch__slider switch__slider-C"
+        }
+      ></span>
+      <p
+        className={`switch__temp switch__temp-F ${
+          currentTemperatureUnit === "F" && "switch__active"
+        }`}
       >
         F
-      </span>
-      <span
-        style={{ color: `${currentTemperatureUnit === "C" ? "white" : ""}` }}
-        className="toggle-switch__text toggle-switch__text_C"
+      </p>
+      <p
+        className={`switch__temp switch__temp-C ${
+          currentTemperatureUnit === "C" && "switch__active"
+        }`}
       >
         C
-      </span>
+      </p>
     </label>
   );
-}
+};
+
+export default ToggleSwitch;

@@ -1,32 +1,82 @@
-export const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr01.jumpingcrab.com"
+    : "http://localhost:3001";
 
-export function checkResponse(res) {
-  if (res.ok) {
-    return res.json();
-  } else {
-    return Promise.reject(`Error ${res.status}`);
-  }
+function checkRes(res) {
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
 function getItems() {
-  return fetch(`${baseUrl}/items`).then(checkResponse);
-}
-
-const addItems = ({ name, weather, imageUrl }) => {
   return fetch(`${baseUrl}/items`, {
-    method: "POST",
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, weather, imageUrl }),
-  }).then(checkResponse);
-};
-
-function deleteItem(id) {
-  return fetch(`${baseUrl}/items/${id}`, {
-    method: "DELETE",
-    headers: { "Content-Type": "application/json" },
-  }).then(checkResponse);
+  }).then(checkRes);
 }
 
-export const api = { getItems, addItems, deleteItem, checkResponse };
+function addItem(name, imageUrl, weather, token) {
+  return fetch(`${baseUrl}/items`, {
+    headers: {
+      "Content-Type": "application/json",
+      authorization: "Bearer " + token,
+    },
+    method: "POST",
+    body: JSON.stringify({ name, imageUrl, weather }),
+  }).then(checkRes);
+}
+
+function deleteCard(cardId, token) {
+  return fetch(`${baseUrl}/items/${cardId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkRes);
+}
+
+function likeItem(cardId, token) {
+  return fetch(`${baseUrl}/items/${cardId}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkRes);
+}
+
+function unlikeItem(cardId, token) {
+  return fetch(`${baseUrl}/items/${cardId}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkRes);
+}
+
+function editProfile(name, avatar, token) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      name: name,
+      avatar: avatar,
+    }),
+  }).then(checkRes);
+}
+
+export {
+  checkRes,
+  getItems,
+  addItem,
+  likeItem,
+  unlikeItem,
+  editProfile,
+  deleteCard,
+};
