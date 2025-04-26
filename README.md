@@ -1,8 +1,16 @@
-# React + Vite
+WTWR
+This is a full-stack website application that gives clothing ideas to users based on their local weather. this project was used React with HTML, Javascript skills and CSS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech-Stack
+React
+Javascript
+HTML
+CSS
+API
+NPM
+Vite
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Backend Repo
+https://github.com/joseidd/se_project_express
+Deployed Github Page
+https://github.com/joseidd
