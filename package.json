@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://wtwr-project99.jumpingcrab.com",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "npm run build && scp -r ./dist/* joseflowmusichd@wtwr-project99.jumpingcrab.com:/home/joseflowmusichd/frontend"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3",

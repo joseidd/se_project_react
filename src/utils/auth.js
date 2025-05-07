@@ -1,7 +1,6 @@
-
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.wtwr01.jumpingcrab.com"
+    ? "https://api.wtwr-project99.jumpingcrab.com"
     : "http://localhost:3001";
 import { checkRes } from "./api";
 
